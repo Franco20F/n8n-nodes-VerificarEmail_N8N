@@ -1,19 +1,19 @@
 {
-	"name": "n8n-nodes-verificar-email",
+	"name": "n8n-nodes-verificaremail",
 	"version": "0.1.0",
-	"description": "",
+	"description": "Nodo N8N",
 	"license": "MIT",
 	"homepage": "",
 	"keywords": [
 		"n8n-community-node-package"
 	],
 	"author": {
-		"name": "",
-		"email": ""
+		"name": "Saul Alexander Franco Rivas",
+		"email": "fr18040@ues.edu.sv"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/<...>/n8n-nodes-<...>.git"
+		"url": "https://github.com/Franco20F/n8n-nodes-VerificarEmail_N8N.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -31,7 +31,7 @@
 		"n8nNodesApiVersion": 1,
 		"strict": true,
 		"credentials": [
-			"dist/credentials/VerificarApi.credentials.js"
+			"dist/credentials/VerificarEmailApi.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/VerificarEmail/VerificarEmail.node.js"

@@ -3,6 +3,7 @@ import type {
     INodeExecutionData,
     INodeType,
     INodeTypeDescription,
+    IDataObject,
 } from 'n8n-workflow';
 import { NodeConnectionTypes } from 'n8n-workflow';
 
@@ -69,7 +70,7 @@ export class VerificarEmail implements INodeType {
                 // La propiedad apiKey fue definida en el .credentials.ts
                 const apiKey = credentials.apiKey as string;
 
-                const response: any = await this.helpers.httpRequest({
+                const response = await this.helpers.httpRequest({
                     method: 'GET',
                     url: 'https://api.emailable.com/v1/verify',
                     headers: {
@@ -80,7 +81,7 @@ export class VerificarEmail implements INodeType {
                         api_key: apiKey // Emailable espera la API key en el Query String o Auth de otra manera
                     },
                     json: true,
-                });
+                }) as IDataObject;
 
                 returnData.push({
                     json: {
