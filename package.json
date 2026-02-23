@@ -1,6 +1,6 @@
 {
-	"name": "n8n-nodes-verificaremail",
-	"version": "0.1.3",
+	"name": "@franco321fr/n8n-nodes-verificaremail",
+	"version": "0.1.4",
 	"description": "Nodo N8N",
 	"license": "MIT",
 	"homepage": "",
