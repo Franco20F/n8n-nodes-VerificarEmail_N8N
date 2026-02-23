@@ -1,6 +1,6 @@
 import {
     IAuthenticateGeneric,
-    //ICredentialTestRequest,
+    ICredentialTestRequest,
     ICredentialType,
     INodeProperties,
     Icon,
@@ -10,32 +10,37 @@ export class VerificarEmailApi implements ICredentialType {
     name = 'verificarEmailApi';
     displayName = 'Verificar Email API';
     icon: Icon = 'file:email.svg';
-    // Uses the link to this tutorial as an example
-    // Replace with your own docs links when building your own nodes
-    documentationUrl = 'https://docs.n8n.io/integrations/creating-nodes/build/declarative-style-node/';
+    documentationUrl = 'https://docs.n8n.io/';
+
     properties: INodeProperties[] = [
         {
             displayName: 'API Key',
             name: 'apiKey',
-            typeOptions: { password: true },
             type: 'string',
+            typeOptions: { password: true },
             default: '',
+            required: true,
+            description: 'API Key de Emailable',
         },
     ];
+
     authenticate: IAuthenticateGeneric = {
         type: 'generic',
         properties: {
             qs: {
-                'api_key': '={{$credentials.apiKey}}'
-            }
+                api_key: '={{$credentials.apiKey}}',
+            },
         },
     };
-    /*
+
     test: ICredentialTestRequest = {
         request: {
-            baseURL: 'https://api.nasa.gov',
-            url: '/apod',
+            baseURL: 'https://api.emailable.com',
+            url: '/v1/verify',
+            method: 'GET',
+            qs: {
+                email: 'test@test.com',
+            },
         },
     };
-    */
 }
