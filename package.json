@@ -1,6 +1,6 @@
 {
 	"name": "@franco321fr/n8n-nodes-verificaremail",
-	"version": "0.1.9",
+	"version": "0.1.10",
 	"description": "Nodo N8N",
 	"license": "MIT",
 	"homepage": "",
@@ -27,6 +27,9 @@
 	"files": [
 		"dist"
 	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"strict": true,
